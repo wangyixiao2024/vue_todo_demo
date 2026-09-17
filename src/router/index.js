@@ -1,11 +1,7 @@
  import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
-  {
-    path: '/',
-    // 首页导航页
-    component: () => import('@/views/Nav.vue')
-  },
+ 
   {
     path: '/axiosbasic',
     component: () => import('@/views/AxiosBasic.vue')

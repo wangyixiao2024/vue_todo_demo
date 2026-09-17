@@ -51,7 +51,7 @@ const toggleItem = async(item)=>{
         alert('切换状态失败')
     }
 }
-const deleteItem = async()=>{
+const deleteItem = async(id)=>{
     try{
         await axios.delete(`http://localhost:3000/todo/${id}`
         )
