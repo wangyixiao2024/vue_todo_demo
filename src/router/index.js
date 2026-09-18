@@ -1,31 +1,70 @@
  import { createRouter, createWebHistory } from 'vue-router'
-
+//====== 原有业务路由（pinia/axios） =====
 const routes = [
  
   {
     path: '/axiosbasic',
-    component: () => import('@/views/AxiosBasic.vue')
+    component: () => import('@/views/business/AxiosBasic.vue')
   },
   {
     path: '/axioswrap',
-    component: () => import('@/views/AxiosWrap.vue')
+    component: () => import('@/views/business/AxiosWrap.vue')
   },
   {
     path: '/piniasimple',
-    component: () => import('@/views/PiniaSimple.vue')
+    component: () => import('@/views/business/PiniaSimple.vue')
   },
   {
     path: '/todo',
-    component: () => import('@/views/Todo.vue'),
+    component: () => import('@/views/business/Todo.vue'),
     meta:{requiresAuth:true}
     
   },
   {
     path:'/login',
-    component:()=>import('@/views/login.vue'),
+    component:()=>import('@/views/business/login.vue')
    
   }
+
+//===== 新增练习demo路由 ======
+,
+  {
+    path:'/todosplitpage',
+    component:()=>import('@/views/practice/TodoSplitPage.vue')
+  }, 
+
+ {path:'/todosinglepage',
+component :()=>import('@/views/practice/TodoSinglePage.vue')
+ },
+ 
+ {path:'/lifehookpage',
+component :()=>import('@/views/practice/lifehookpage.vue')
+ },
+
+ {
+  path:'/todoparentpage',
+  component:()=>import('@/views/practice/TodoParentPage.vue') 
+ },
+
+  {
+    path:'/fromdirectivepage',
+    component:()=>import('@/views/practice/FromDirectivePage.vue') 
+  }
+  ,
+  {
+    path:'/addemopage',
+    component:()=>import('@/views/practice/AdDemoPage.vue') 
+  }
+   ,
+  {
+    path:'/todofullpage',
+    component:()=>import('@/views/practice/TodoFullPage.vue') 
+  }
+
 ]
+
+
+
 
 const router = createRouter({
   history: createWebHistory(),

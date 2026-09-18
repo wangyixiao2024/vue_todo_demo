@@ -5,10 +5,16 @@
   <nav class="nav">
     <h2>导航菜单</h2>
     <div class="link-wrap">
+      <h3>业务实战模块（pinia/Axios）</h3>
   <router-link to="/axiosbasic"> Axios原生基础</router-link>
   <router-link to="/axioswrap">Axios封装</router-link>
   <router-link to="/piniasimple">纯Pinia练习</router-link>
   <router-link to="/todo">Todo整合实战</router-link>
+  </div>
+  <div class="link-wrap">
+    <h3>Vue3组合式API练习模块</h3>
+    <router-link to="/todosplitpage">待办完整版</router-link>
+    <router-link to="/addemopage">广告弹窗练习</router-link>
   </div>
 </nav>
 
