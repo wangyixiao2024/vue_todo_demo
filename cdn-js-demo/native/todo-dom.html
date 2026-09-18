@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+    <meta charset="UTF-8">
+    <title>待办默写</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button id="addBtn">添加</button>
+    <button id="delBtn">删除最后一条</button>
+    <button id="clearBtn">一键清空全部</button>
+    <div id="listBox"></div>
+
+<script>
+// =========下面全部你来写=========
+let inp =document.querySelector("#inp");
+let addBtn=document.querySelector("#addBtn");
+let delBtn=document.querySelector("#delBtn");
+let listBox = document.querySelector("#listBox");
+let clearBtn =document.querySelector("#clearBtn");
+let liebiao=[];
+function render(){
+    let ras ='';
+    for(let i=0;i<liebiao.length;i++){
+        ras+=`<div style="margin:4px 0;">
+        ${liebiao[i]}<button data-index="${i}">删除本条</button>
+        </div>
+        `;
+    }
+   listBox.innerHTML=ras;
+
+let delBtns=document.querySelectorAll("button[data-index]" );
+for(let j = 0;j<delBtns.length;j++)
+{
+    delBtns[j].onclick = function(){
+        let idx = Number(this.dataset.index);
+        liebiao.splice(idx,1);
+        render();
+    }
+}
+
+}
+clearBtn.onclick=function(){
+    liebiao.splice(0,liebiao.length);
+  render();
+}
+addBtn.onclick=function(){
+    let text =inp.value;
+    if(text!==''){
+        liebiao.push(text);
+        render();
+        inp.value='';
+    }
+    
+}
+delBtn.onclick=function(){
+    if(liebiao.length>0){
+        liebiao.pop();
+        render();
+    }
+}
+
+</script>
+</body>
+</html>

@@ -11,7 +11,7 @@ export default {
   props: {
     todo: {
       type: Object,
-      required: true,
+      required: true,//必须传，不传就报错
       shape: {
         id: Number,
         text: String,

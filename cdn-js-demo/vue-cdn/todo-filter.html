@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筛选</title><script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
+</head>
+<body>
+    <div id="app">
+        <input  v-model="inputtext" placeholder="请输入新任务">
+        <button @click ="add">添加任务</button>
+
+        <br>
+        <button @click="filterType='all'">显示全部</button>
+        <button @click="filterType='done'">显示已完成</button>
+        <button @click="filterType='undone'">显示未完成</button>
+
+        <div v-for="(item,index) in showList" :key="item.id">
+            {{item.text}}
+            <span>{{item.done?"已完成":"未完成"}}</span>
+            <button @click="toggleDone(item)">切换状态</button>
+            <button @click="del(item.id)">删除</button>
+        </div>
+    </div>
+    <script>
+const {createApp} = Vue 
+createApp({
+    data(){
+        return{
+            inputtext:'',
+           todos:[
+            {id:1,text:"扫地",done:false},
+            {id:2,text:"洗碗",done:true},
+            {id:3,text:"拖地",done:false}
+           ],
+           filterType:'all',
+           maxId:3
+        }
+    },
+    computed:{
+        showList(){
+            if(this.filterType ==="all"){
+                return this.todos
+            }else if (this.filterType === 'done'){
+                return this.todos.filter(item=>item.done===true)
+            }else{
+                return this.todos.filter(item=>item.done===false)
+            }
+        }
+    },
+    methods:{
+add(){
+    const val = this.inputtext.trim()
+if(val === ''){ 
+return }
+
+this.maxId++
+this.todos.push({
+    id:this.maxId,
+    text:val,
+    done:false
+})
+this.inputtext=''
+},
+del(id){
+    const i = this.todos.findIndex(item=>item.id===id)
+    if(i!==-1){
+        this.todos.splice(i,1)
+    }
+},
+toggleDone(item){
+    item.done=! item.done 
+},
+    }
+
+    
+}).mount("#app")
+    </script>
+</body>
+</html>

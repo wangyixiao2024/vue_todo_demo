@@ -7,7 +7,12 @@
     </div>
 </template>
 <script setup>
-const props = defineProps(['todo'])
+const props = defineProps({
+    todo:{
+        type:Object,
+        required:true
+    }
+})
 const emit = defineEmits(['toggle-item','del-item'])
 const handleToggle=()=>{
     emit('toggle-item',props.todo.id)
@@ -15,4 +20,5 @@ const handleToggle=()=>{
 const handleDel=()=>{
     emit('del-item',props.todo.id)
 }
+
 </script>

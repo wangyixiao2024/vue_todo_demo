@@ -28,17 +28,14 @@ onUnmounted(()=>{
     clearTimeout(timer)
 })
 </script>
-
-
-
 <style scoped>
 .ad-box{
     width: 300px;
     padding: 20px;
     border: 2px solid #666;
     position: fixed;
-    top: 100px;
-    left: 100px;
+    top: 500px;
+    left: 200px;
     background: #fff;
 }
 </style>

@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f2f5;
+  font-family: "Microsoft YaHei", sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  max-width: 600px;
+  margin: 20px auto 15px;
+  color: #2c3e50;
+  font-size: 22px;
+  border-left: 4px solid #3498db;
+  padding-left: 12px;
+}
+
+.box {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+}
+
+.box p {
+  color: #555;
+  font-size: 16px;
+  line-height: 2;
+  border-bottom: 1px dashed #eee;
+  padding: 5px 0;
+}
+
+
+ul {
+  list-style: none;
+}
+
+.box li {
+  color: #555;
+  font-size: 16px;
+  line-height: 2.2;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+
+/* 技能区卡片 */
+.box1 {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px 25px;
+}
+
+
+.box1 li {
+  display: inline-block;
+  /* 技能标签：横着排的蓝色胶囊 */
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 6px 16px;
+  margin: 5px 10px 5px 0;
+  border-radius: 20px;
+  font-size: 14px;
+}

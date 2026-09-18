@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+  <meta charset="UTF‑8">
+  <title>v‑model四种表单复习</title>
+  <!-- CDN引入Vue3 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+  <div>
+    <h4>1.文本框 text</h4>
+    <input type="text" v-model="username" placeholder="输入用户名">
+    <p>username：{{ username }}</p>
+  </div>
+
+  <div>
+    <h4>文本框</h4>
+    <input type="text" v-model="name" placeholder="请输入名字">
+    <p>name:{{name}}</p>
+  </div>
+
+  <div>
+    <h4>2.复选框 checkbox</h4>
+    <input type="checkbox" v-model="isAgree">
+    <span>同意协议</span>
+    <p>isAgree：{{ isAgree }}</p>
+  </div>
+
+<div>
+  <h4>复选框checkbox</h4>
+  <input type="checkbox" v-model="isAgree ">
+  <span>同意协议</span>
+  <p>isAgree:{{isAgree}}</p>
+</div>
+
+  <div>
+    <h4>3.单选 radio</h4>
+    <input type="radio" value="male" v-model="gender">男
+    <input type="radio" value="female" v-model="gender">女
+    <p>gender：{{ gender }}</p>
+  </div>
+
+<div>
+  <h4>单选radio</h4>
+  <input type="radio" value="male" v-model="gender">男
+  <input type="radio" value="female" v-model="gender">女
+  <p>gender:{{gender}}</p>
+</div>
+
+<div>
+  <h4>下拉select</h4>
+<select v-model="city">
+  <option value="jinan">济南</option>
+  <option value="zibo">淄博</option>
+</select>
+</div>
+
+  <div>
+    <h4>4.下拉 select</h4>
+    <select v-model="city">
+      <option value="jinan">济南</option>
+      <option value="zibo">淄博</option>
+    </select>
+    <p>city：{{ city }}</p>
+  </div>
+</div>
+
+<script>
+const { createApp } = Vue
+
+createApp({
+  data(){
+    return {
+      username:'',
+      isAgree:false,
+      gender:'male',
+      city:'jinan'
+    }
+  }
+}).mount('#app')
+</script>
+return{
+  name:'',
+  isAgree:false,
+  gender:'male',
+  city:'jinan'
+}
+</body>
+</html>

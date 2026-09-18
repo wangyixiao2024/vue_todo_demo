@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.fu{
+    width: 400px;
+    height: 300px;
+    border: 5px solid black;
+    margin: 50px auto;
+    position: relative;
+overflow: hidden; /*超出父盒子的部分直接隐藏看不见*/
+}
+.fu-xiao{
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    
+}
+.lan{
+    height: 100px;
+    width: 60px;
+    position: fixed;
+    border: 5px solid black;
+    left: 0px;
+    bottom: 0px;
+}

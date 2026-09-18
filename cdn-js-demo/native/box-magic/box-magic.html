@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11111</title>
+    <link rel="stylesheet" href="1111.css">
+</head>
+<body>
+    <div id="A">
+        <div id="B"></div>
+            <div id="C">
+            <button id="da">变大</button>
+            <button id="xiao">变小</button>
+            <button id="se">变色</button>
+        
+    </div>
+    </div>
+    <script>
+let B = document.querySelector("#B");
+let C = document.querySelector("#C");
+let da = document.querySelector("#da");
+let xiao = document.querySelector("#xiao");
+let se = document.querySelector("#se");
+let size =100;
+let colorIndex =0;
+let colors = ["red","black","blue","green"]
+da.onclick=function(){
+     size=size+10;
+    if(size>300){
+        size=300;
+    }
+   B.style.width  = size + 'px';
+   B.style.height  = size + 'px';
+}
+xiao.onclick=function(){
+     size=size-10;
+    if(size<50){
+        size=50;
+    }
+   B.style.width  = size + 'px';
+   B.style.height  = size + 'px';
+}
+se.onclick=function(){
+    colorIndex++;
+    colorIndex = colorIndex%colors.length;
+    B.style.backgroundColor = colors[colorIndex]
+}
+
+
+    </script>
+</body>
+</html>

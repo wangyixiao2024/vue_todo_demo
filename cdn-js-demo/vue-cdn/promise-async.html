@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function getUserInfo(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const isSuccess = true 
+                if(isSuccess){
+                    resolve('张三')
+                }else{
+
+               
+                reject('网络请求失败,拿不到用户数据')
+                 }
+            },1000)
+        })
+    }
+    async function showName(){
+        try{
+            console.log('开始获取用户')
+            const name = await getUserInfo()
+            console.log('拿到用户名：',name)
+        }catch(err){
+            console.log('捕获错误：',err)
+        }
+    }
+    showName()
+</script>
+</body>
+</html>

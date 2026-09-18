@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏</title>
+    <style>
+.nav-box{
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    background-color: #dddddd;
+    gap: 20px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.middle-box{
+    flex:1;
+    display: flex;
+    justify-content: space-around;
+align-items: center;
+}
+.item{
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+.item:hover{
+    background-color: #bbbbbb;
+    cursor: pointer;
+color: rgb(0, 198, 253);
+}
+    </style>
+</head>
+<body>
+    <div class="nav-box">
+        <div>logo</div>
+        <div class="middle-box">
+            <div class="item">首页</div>
+            <div class="item">作品</div>
+            <div class="item">关于</div>
+        </div>
+        <div class="item">联系我们</div>
+    </div>
+</body>
+</html>

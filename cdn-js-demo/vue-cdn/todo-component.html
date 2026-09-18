@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model="inputText" placeholder="请输入新任务">
+        <button @click="add">添加任务</button>
+        <br>
+        <button @click="filterType='all'">显示全部</button>
+        <button @click="filterType='done'">显示已完成</button>
+        <button @click="filterType='undone'">显示未完成</button>
+
+        <todo-item
+            v-for="item in showList"
+            :key="item.id"
+            :todo="item"
+            @toggle-item="toggleDone"
+            @del-item="del"
+        />
+    </div>
+
+<script>
+const TodoItem = {
+    props: ['todo'],
+    template:`
+        <div>
+            {{ todo.text }}
+            <button @click="handleToggle">切换状态</button>
+            <button @click="handleDel">删除</button>
+        </div>
+    `,
+    methods:{
+        handleToggle(){
+            this.$emit('toggle-item', this.todo.id)
+        },
+        handleDel(){
+            this.$emit('del-item', this.todo.id)
+        }
+    }
+}
+
+const { createApp } = Vue
+createApp({
+    components:{ TodoItem },
+    data(){
+        return{
+            inputText:'',
+            todos:[
+                {id:1,text:"扫地",done:false},
+                {id:2,text:"洗碗",done:true},
+                {id:3,text:"拖地",done:false}
+            ],
+            filterType:'all',
+            maxId:3
+        }
+    },
+    computed:{
+        showList(){
+            if(this.filterType === 'all'){
+                return this.todos
+            }else if(this.filterType === 'done'){
+                return this.todos.filter(item=>item.done)
+            }else{
+                return this.todos.filter(item=>!item.done)
+            }
+        }
+    },
+    methods:{
+        add(){
+            const val = this.inputText.trim()
+            if(val === '') return
+            this.todos.push({
+                id: this.maxId++,
+                text: val,
+                done: false
+            })
+            this.inputText = ''
+        },
+        del(id){
+            const i = this.todos.findIndex(item => item.id === id)
+            if(i !== -1){
+                this.todos.splice(i,1)
+            }
+        },
+        toggleDone(id){
+            const i = this.todos.findIndex(item => item.id === id)
+            if(i !== -1){
+                this.todos[i].done = !this.todos[i].done
+            }
+        }
+    }
+}).mount("#app")
+</script>
+</body>
+</html>

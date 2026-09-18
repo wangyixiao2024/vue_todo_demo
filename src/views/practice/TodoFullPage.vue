@@ -19,7 +19,7 @@
   </div>
 </template>
 <script setup>
-import { ref, computed ,reactive } from 'vue'
+import { ref, computed } from 'vue'
 // 响应式数据，相当于选项式data里面变量
 const inputText = ref('')
 const filterType = ref('all')
