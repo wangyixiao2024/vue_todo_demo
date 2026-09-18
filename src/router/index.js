@@ -1,7 +1,10 @@
  import { createRouter, createWebHistory } from 'vue-router'
 //====== 原有业务路由（pinia/axios） =====
 const routes = [
- 
+ {
+  path: '/',
+  redirect: '/optionsapipage'
+},
   {
     path: '/axiosbasic',
     component: () => import('@/views/business/AxiosBasic.vue')
@@ -25,9 +28,10 @@ const routes = [
     component:()=>import('@/views/business/login.vue')
    
   }
-
-//===== 新增练习demo路由 ======
 ,
+//===== 新增练习demo路由 ======
+
+
   {
     path:'/todosplitpage',
     component:()=>import('@/views/practice/TodoSplitPage.vue')
@@ -59,7 +63,11 @@ component :()=>import('@/views/practice/lifehookpage.vue')
   {
     path:'/todofullpage',
     component:()=>import('@/views/practice/TodoFullPage.vue') 
-  }
+  },
+{
+  path: '/optionsapipage',
+  component: () => import('@/views/practice/OptionsAPIPage.vue')
+},
 
 ]
 
