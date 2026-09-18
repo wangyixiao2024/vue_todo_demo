@@ -8,7 +8,7 @@
       <button @click="currentDemo='form'" style="margin:0 4px;padding:4px 10px">表单v‑model</button>
     </div>
 
-    // Demo1 父子待办
+    <!-- Demo1 父子待办 -->
     <div v-if="currentDemo === 'todo'">
       <h3>父子组件‑待办清单(props / $emit / computed筛选)</h3>
       <input v-model="inputText" placeholder="请输入新任务">
@@ -27,7 +27,7 @@
       />
     </div>
 
-    //Demo2 计数器 
+    <!-- Demo2 计数器 -->
     <div v-if="currentDemo === 'count'">
       <h3>计数器（data / methods）</h3>
       <p>当前数值：{{ count }}</p>
@@ -38,7 +38,7 @@
     <p>(该计时器上限是20 下限是0 初始值是5)</p>
     </div>
    
-    // Demo3 watch深度监听 
+    <!-- Demo3 watch深度监听 -->
     <div v-if="currentDemo === 'watchDemo'">
       <h3>watch深度监听数组</h3>
       <p>列表：</p>
@@ -50,7 +50,7 @@
       <p style="color:#666">控制台查看watch打印日志</p>
     </div>
 
-    //Demo4 表单v‑model全套 
+    <!-- Demo4 表单v‑model全套 -->
     <div v-if="currentDemo === 'form'">
       <h3>v‑model多种表单</h3>
       <div>用户名：<input v-model="form.username" /></div>
@@ -84,7 +84,9 @@ export default {
   components: { TodoItemOption },
   data() {
     return {
+      // 切换当前展示哪个demo
       currentDemo: '',
+
       // Demo1 待办
       inputText: '',
       todos: [
@@ -94,8 +96,10 @@ export default {
       ],
       filterType: 'all',
       maxId: 3,
+
       // Demo2 计数器
       count: 5,
+
       // Demo3 watch监听
       list: [{id:1,name:'A'}, 
       {id:2,name:'B'}],
@@ -110,6 +114,7 @@ export default {
     }
   },
   computed: {
+    // 待办筛选
     showList() {
       if (this.filterType === 'all') return this.todos
       if (this.filterType === 'done') return this.todos.filter(i => i.done)
@@ -125,7 +130,7 @@ export default {
     }
   },
   methods: {
-    //待办
+    // 待办
     add() {
       const val = this.inputText.trim()
       if (!val) return
