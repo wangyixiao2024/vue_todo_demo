@@ -10,7 +10,7 @@
     </div>
 </template>
 <script setup>
-import LifeDemo from '../components/LifeDemo.vue'
+import LifeDemo from '@/components/LifeDemo.vue'
 import {ref,onMounted,onUnmounted} from 'vue'
 const myp = ref(null)
 //let timer = null

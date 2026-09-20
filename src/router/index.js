@@ -29,13 +29,24 @@ const routes = [
    
   }
 ,
-//===== 新增练习demo路由 ======
-
-
-  {
+//===== 选项试 APIdemo路由 ======
+ {
     path:'/todosplitpage',
     component:()=>import('@/views/practice/TodoSplitPage.vue')
   }, 
+ {
+    path:'/addemopage',
+    component:()=>import('@/views/practice/AdDemoPage.vue') 
+  }
+   ,
+   {
+    path:'/checkboxoptiondemo',
+    component :()=>import('@/views/practice/CheckboxOptionDemo.vue')
+   },
+//===== 新增练习demo路由 ======
+
+
+ 
 
  {path:'/todosinglepage',
 component :()=>import('@/views/practice/TodoSinglePage.vue')
@@ -55,11 +66,7 @@ component :()=>import('@/views/practice/lifehookpage.vue')
     component:()=>import('@/views/practice/FromDirectivePage.vue') 
   }
   ,
-  {
-    path:'/addemopage',
-    component:()=>import('@/views/practice/AdDemoPage.vue') 
-  }
-   ,
+ 
   {
     path:'/todofullpage',
     component:()=>import('@/views/practice/TodoFullPage.vue') 
@@ -68,7 +75,10 @@ component :()=>import('@/views/practice/lifehookpage.vue')
   path: '/optionsapipage',
   component: () => import('@/views/practice/OptionsAPIPage.vue')
 },
-
+{
+  path:'/practice',
+  component:() => import('@/views/practice/Practice.vue')
+}
 ]
 
 

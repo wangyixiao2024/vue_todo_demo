@@ -5,7 +5,7 @@
         <button @click="showAd = true">弹出广告</button>
         <Adpopup v-if="showAd" @close-ad="showAd = false"></Adpopup>
         <br>
-        <button @click="jumpTest">点我跳转aboutpage页面</button>
+        <button @click="jumpTest">点我跳转待办练习页面</button>
     </div>
 </template>
 <script setup>
@@ -20,7 +20,7 @@ const router = useRouter()
 const  route = useRoute()
 console.log('当前页面路径：', route.path)
 const jumpTest = ()=>{
-    router.push('/aboutpage')
+    router.push('/todosplitpage')
 }
 
 watch(showAd,(isShow) => {if(timer){
