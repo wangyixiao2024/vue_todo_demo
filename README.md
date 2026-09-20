@@ -52,3 +52,9 @@ vue3-pinia-axios-practice
 🔗 仓库地址
 GitHub：[https://github.com/wangyixiao2024/vue_todo_demo]
 Gitee:  [https://gitee.com/wang-yi-xiao01/vue_todo_demo]
+
+
+![项目效果图](./images/todo.png)
+
+
+## 🧰 技术栈
