@@ -1,4 +1,4 @@
- import { createRouter, createWebHashHistory } from 'vue-router'
+ import { createRouter, createWebHistory } from 'vue-router'
  
 //====== 原有业务路由（pinia/axios） =====
 const routes = [
@@ -86,7 +86,7 @@ component :()=>import('@/views/practice/LifeHookPage.vue')
 
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 router.beforeEach((to,from,next)=>{
