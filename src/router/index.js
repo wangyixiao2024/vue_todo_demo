@@ -53,7 +53,7 @@ component :()=>import('@/views/practice/TodoSinglePage.vue')
  },
  
  {path:'/lifehookpage',
-component :()=>import('@/views/practice/lifehookpage.vue')
+component :()=>import('@/views/practice/LifeHookPage.vue')
  },
 
  {
