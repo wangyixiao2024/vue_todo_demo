@@ -9,8 +9,8 @@
     <ul> <li v-for="item in todoList" :key="item.id">
        
         <span v-if="editId === item.id">
-            <input v-model="editTitle"/>
-            <button @click="submitEdit(item)">确认修改</button>
+            <input v-model="editTitle"  :ref="el => { if(el) inputRefObj[item.id] = el }"/>
+            <button @click="submitEdit(item)" >确认修改</button>
             <button  @click="cancelEdit">取消</button>
         </span>
         <span v-else>
@@ -37,7 +37,9 @@ const gohome =()=>{
     router.push('/')
 }
 import{getTodoList,addTodo,editTodo,delTodo,toggleTodo} from '@/api/todo'
-import {ref,computed} from 'vue'
+import {ref,computed,nextTick} from 'vue'
+const inputRefObj = ref({})
+
 const todoList = ref([])
 const editId = ref(null)
 const editTitle = ref('')
@@ -63,9 +65,17 @@ const cancelEdit = () =>{
     editId.value = null 
     editTitle.value=''
 }
-const openEdit = (item)=>{
+const openEdit = async (item)=>{
     editId.value = item.id
     editTitle.value = item.title
+    await nextTick()
+    const currentInput = inputRefObj.value[item.id]
+    if(currentInput){
+        currentInput.focus()
+    currentInput.select()
+    }
+   
+    
 }
 const submitEdit = async(item) =>{
     try{

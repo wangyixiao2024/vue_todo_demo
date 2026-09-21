@@ -12,13 +12,13 @@
   <router-link to="/todo">Todo整合实战</router-link>
   </div>
   <div class="link-wrap">
-    <h3>Vue3组合式API练习模块</h3>
+    <h3>Vue3组合式API模块</h3>
     <router-link to="/todosplitpage">待办完整版</router-link>
-    <router-link to="/addemopage">广告弹窗练习</router-link>
+    <router-link to="/addemopage">广告弹窗案例</router-link>
     <router-link to="/checkboxoptiondemo">原生复选框全选案例</router-link>
   </div>
   <div class="link-wrap">
-    <h3>Vue3选项试API练习模块</h3>
+    <h3>Vue3选项试API模块</h3>
     <router-link to="/optionsapipage">选项试API综合演练</router-link>
   </div>
 </nav>
